@@ -1,0 +1,46 @@
+/* цвет основного текста #212121
+вторичный цвет текста #757575
+
+основноий белый #FFFFFF
+акцент #2196F3
+
+черный лого #000000
+адрес в футере rgba(255, 255, 255, 0.6)
+
+bgc футера #2F303A
+вторичный цвет фона #F5F4FA
+
+
+*/
+
+body {
+  background-color: #ffffff;
+}
+
+.list {
+  list-style: none;
+}
+
+.logo {
+  color: #000000;
+}
+.accent-logo {
+  color: #2196f3;
+}
+
+/* site nav */
+
+.site-nav .link {
+  color: #212121;
+}
+
+.site-nav .link:hover,
+.site-nav .link:focus {
+  color: #2196f3;
+}
+
+/* section */
+
+.section-title {
+  color: #212121;
+}

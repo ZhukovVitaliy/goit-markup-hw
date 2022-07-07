@@ -1,5 +1,6 @@
-/* цвет основного текста #212121
-вторичный цвет текста #757575
+/*
+ цвет цвет заголовков #212121
+цвет основного текста #757575
 
 основноий белый #FFFFFF
 акцент #2196F3
@@ -10,11 +11,29 @@
 bgc футера #2F303A
 вторичный цвет фона #F5F4FA
 
-
+шрифт лого Raleway
+осночной шрифт Roboto
 */
 
+:root {
+  --primery-text-color: #757575;
+  --title-text-color: #212121;
+  --primery-white-color: #ffffff;
+  --secondary-background-color: #f5f4fa;
+  --accent-color: #2196f3;
+  --logo-color: #000000;
+  --address-color: rgba(255, 255, 255, 0.6);
+  --footer-background-color: #2f303a;
+  --footer-contact-link-color: rgba(255, 255, 255, 0.6);
+}
+
 body {
-  background-color: #ffffff;
+  color: var(--primery-text-color);
+  background-color: var(--primery-white-color);
+}
+
+a {
+  text-decoration: none;
 }
 
 .list {
@@ -22,25 +41,78 @@ body {
 }
 
 .logo {
-  color: #000000;
+  color: var(--logo-color);
 }
 .accent-logo {
-  color: #2196f3;
+  color: var(--accent-color);
 }
 
 /* site nav */
 
 .site-nav .link {
-  color: #212121;
+  color: var(--title-text-color);
+}
+
+.site-nav .link.current {
+  color: var(--accent-color);
 }
 
 .site-nav .link:hover,
 .site-nav .link:focus {
-  color: #2196f3;
+  color: var(--accent-color);
+}
+
+/* contact links */
+
+.contact-link {
+  color: var(--primery-text-color);
+}
+
+.contact-link:hover {
+  color: var(--accent-color);
+}
+
+.footer-contact-link {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* section */
 
 .section-title {
-  color: #212121;
+  color: var(--title-text-color);
+}
+
+.feature-lest .title {
+  color: var(--title-text-color);
+}
+
+/* paragraph */
+
+.paragraph {
+  color: var(--primery-text-color);
+}
+
+/* button */
+
+.button {
+  color: var(--title-text-color);
+  background-color: var(--secondary-background-color);
+}
+
+.button.primery {
+  color: var(--primery-white-color);
+  background-color: var(--accent-color);
+}
+
+.button.secondary:hover,
+..button.secondary:focus {
+  color: var(--primery-white-color);
+  background-color: var(--accent-color);
+}
+
+.button.secondary,
+.button.primery:hover,
+.button.primery:focus {
+  color: var(--title-text-color);
+  background-color: var(--secondary-background-color);
 }

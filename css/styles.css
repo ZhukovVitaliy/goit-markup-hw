@@ -198,15 +198,19 @@ ul {
   background-color: var(--accent-color);
 }
 
-.button.secondary:hover,
-..button.secondary:focus {
-  color: var(--primery-white-color);
-  background-color: var(--accent-color);
-}
-
-.button.secondary,
 .button.primery:hover,
 .button.primery:focus {
   color: var(--title-text-color);
   background-color: var(--secondary-background-color);
+}
+
+.button.secondary {
+  color: var(--title-text-color);
+  background-color: var(--secondary-background-color);
+}
+
+.button.secondary:hover,
+.button.secondary:focus {
+  color: var(--primery-white-color);
+  background-color: var(--accent-color);
 }

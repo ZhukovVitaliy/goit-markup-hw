@@ -18,6 +18,10 @@ bgc футера #2F303A
 шрифт лого Raleway
 осночной шрифт Roboto
 
+rgba(255, 255, 255, 0.1);
+
+первичный цвет иконок #afb1b8
+
 */
 
 :root {
@@ -30,8 +34,10 @@ bgc футера #2F303A
   --address-color: rgba(255, 255, 255, 0.6);
   --footer-background-color: #2f303a;
   --footer-contact-link-color: rgba(255, 255, 255, 0.6);
+  --footer-social-link-color: rgba(255, 255, 255, 0.1);
   --header-border: #ececec;
   --portfolio-card-border: #eeeeee;
+  --icon-cilor: #afb1b8;
 }
 
 /* html {
@@ -105,6 +111,17 @@ img {
   /* outline: 2px solid teal; */
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* header */
 
 .logo {
@@ -168,26 +185,60 @@ img {
 .contacts {
   display: flex;
   margin-left: auto;
+  gap: 50px;
 }
 
-.contacts .item + .item {
+/* .contacts .item + .item {
   margin-left: 50px;
-}
+} */
 
 /* contact links */
 
 .contact-link {
-  color: var(--primery-text-color);
+  display: inline-flex;
+  align-items: center;
 
+  color: var(--primery-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
 
-.contact-link:hover {
-  color: var(--accent-color);
+.link-icon {
+  /* width: 16px;
+  height: 16px; */
+  margin-right: 10px;
+  fill: currentColor;
 }
+
+.contact-link:hover,
+.contact-link:focus {
+  color: var(--accent-color);
+  --color4: var(--accent-color);
+}
+
+/* .contact-link::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  -*-background-color: rgb(10, 48, 125);
+} */
+
+/* .icon-mail::before {
+  background-image: url(../images/envelope.svg);
+}
+
+.icon-smartphone::before {
+  background-image: url(../images/smartphone.svg);
+} */
 
 .footer-contact-link {
   display: inline-block;
@@ -203,12 +254,30 @@ img {
 
 /* hero */
 
+.overlay {
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .hero {
   text-align: center;
 }
 
 .hero-title {
-  /* color: var(--primery-white-color); */
+  color: var(--primery-white-color);
   margin-top: 0;
   margin-bottom: 30px;
 
@@ -252,11 +321,54 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 30px;
 }
 
 .feature-list .item {
   width: 270px;
 }
+
+.feature-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+
+  background-color: var(--secondary-background-color);
+}
+
+.feature-icon {
+  width: 70px;
+}
+
+/* .feature-list .item::before {
+  content: '';
+  display: block;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+
+  background-size: 20px;  */
+/* background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--secondary-background-color);
+} */
+
+/* .item.icon-antenna::before {
+  background-image: url(../images/antenna.svg);
+}
+.item.icon-clock::before {
+  background-image: url(../images/clock.svg);
+}
+.item.icon-diagram::before {
+  background-image: url(../images/diagram.svg);
+}
+.item.icon-astronaut::before {
+  background-image: url(../images/astronaut.svg);
+} */
 
 .feature-list .title {
   margin-top: 0;
@@ -294,6 +406,13 @@ img {
   justify-content: space-between;
 }
 
+.command-list > .item {
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
 .command-list .title {
   margin-top: 30px;
   margin-bottom: 10px;
@@ -308,11 +427,45 @@ img {
 
 .command-list .text {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
 
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
+}
+
+/* clients list */
+
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clients-list .item {
+  /* background-color: teal; */
+}
+
+.client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+
+  border: 1px solid var(--icon-cilor);
+  border-radius: 4px;
+}
+
+.client-icon {
+  width: 106px;
+  height: 60px;
+  fill: currentColor;
+}
+
+.client-link:hover,
+.client-link:focus {
+  border-color: var(--accent-color);
+  --color1: var(--accent-color);
 }
 
 /* projects-list */
@@ -320,23 +473,32 @@ img {
 .projects-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
+
+  /* background-color: #2196f3; */
 }
 
 .projects-list .item {
-  width: calc((100% - 60) / 3);
-  margin-right: 30px;
-  margin-bottom: 30px;
+  flex-basis: calc((100% - 60) / 3);
+  /* margin-right: 30px;
+  margin-bottom: 30px; */
 
   /* outline: 2px solid teal; */
 }
 
-.projects-list .item:nth-child(3n) {
+.projects-list .item:hover,
+.projects-list .item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* .projects-list .item:nth-child(3n) {
   margin-right: 0;
 }
 
 .projects-list .item:nth-last-child(-n + 3) {
   margin-bottom: 0;
-}
+} */
 
 .projects-list .content {
   padding: 20px 24px;
@@ -374,9 +536,12 @@ img {
   background-color: var(--footer-background-color);
 }
 
+.flex-footer {
+  display: flex;
+}
+
 .footer-logo {
   display: inline-block;
-
   margin-bottom: 20px;
 
   color: var(--accent-color);
@@ -386,13 +551,87 @@ img {
   color: var(--primery-white-color);
 }
 
-address {
+.address {
   margin-bottom: 10px;
 
   color: var(--primery-white-color);
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
+}
+
+/* join-block */
+
+.join-block {
+  margin-left: 70px;
+}
+
+.join-block > .text {
+  display: inline-block;
+  margin: 0 0 20px 0;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 1.14;
+  text-transform: uppercase;
+  color: var(--primery-white-color);
+}
+
+/* command-links-list */
+
+.command-links-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.command-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+}
+
+.command-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.command-social-link:hover,
+.command-social-link:focus {
+  background-color: var(--accent-color);
+  --color1: var(--primery-white-color);
+}
+
+/* join-links-list */
+
+.join-links-list {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  --color1: var(--primery-white-color);
+  background-color: var(--footer-social-link-color);
+  border-radius: 50%;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
 }
 
 /* paragraph */
@@ -440,6 +679,7 @@ address {
 .button.primery:focus {
   color: var(--title-text-color);
   background-color: var(--secondary-background-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .button.secondary {
@@ -453,4 +693,50 @@ address {
 .button.secondary:focus {
   color: var(--primery-white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
+/* test */
+
+.container {
+}
+
+/* .container {
+  max-width: 1200px;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: #2196f3;
+}
+
+.card-set {
+  display: flex;
+  Make a flex container multiline
+  flex-wrap: wrap;
+  Set gap between rows and columns
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+   Set the width of the elements 
+  flex-basis: calc((100% - 20px) / 3);
+
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.item h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.item p {
+  margin: 0;
+} */

@@ -24,7 +24,10 @@
 
 .menu-container {
   @media screen and (max-width: $mobileOnly) {
-    background-color: var(--primery-white-color);
+    z-index: 1;
+
+    background-color: var(--secondary-background-color);
+
     padding: 20px;
     font-size: 20px;
     text-align: center;

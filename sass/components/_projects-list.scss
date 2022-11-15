@@ -1,0 +1,109 @@
+.projects-list {
+  @media screen and(min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    // gap: 30px;
+    margin: -15px;
+  }
+}
+
+.item {
+  .projects-list & {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (min-width: $tablet) {
+      margin: 15px;
+      width: calc((100% - 4 * 15px) / 2);
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin: 15px;
+      width: calc((100% - 6 * 15px) / 3);
+    }
+  }
+
+  .projects-list &:hover,
+  .projects-list &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  .projects-list &:not(:last-child) {
+    @media screen and(max-width: $mobileOnly) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.project-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(33, 150, 243, 0.9);
+
+  transform: translatey(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .projects-list .item:hover &,
+  .projects-list .item:focus & {
+    transform: translatey(0);
+  }
+}
+
+.project-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-text {
+  margin: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+
+  color: var(--primery-white-color);
+}
+
+.content {
+  .projects-list & {
+    padding: 24px 20px;
+
+    border-left: 1px solid var(--portfolio-card-border);
+    border-right: 1px solid var(--portfolio-card-border);
+    border-bottom: 1px solid var(--portfolio-card-border);
+  }
+
+  .projects-list &:nth-child(-n + 2) {
+    @media screen and(min-width:$tablet) and(max-width:$tabletOnly) {
+      height: 136px;
+    }
+  }
+}
+
+.title {
+  .projects-list & {
+    margin-top: 0;
+    margin-bottom: 4px;
+
+    color: var(--title-text-color);
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+
+    @media screen and(min-width:$desktop) {
+      font-size: 18px;
+      line-height: 2;
+    }
+  }
+}
+
+.text {
+  .projects-list & {
+    margin: 0;
+    color: var(--primery-text-color);
+
+    font-size: 16px;
+    line-height: 1.88;
+  }
+}

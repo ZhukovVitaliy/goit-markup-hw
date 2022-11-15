@@ -1,0 +1,62 @@
+.command-list {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+    // gap: 30px;
+  }
+}
+
+.item {
+  .command-list > & {
+    padding-bottom: 30px;
+
+    background: #ffffff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+
+    @media screen and(max-width: $mobileOnly) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and(max-width: $tabletOnly) {
+      padding-bottom: 24px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      margin: 15px;
+      width: calc((100% - 4 * 15px) / 2);
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin: 15px;
+      width: calc((100% - 8 * 15px) / 4);
+    }
+  }
+}
+
+.title {
+  .command-list & {
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    color: var(--title-text-color);
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.71;
+    text-align: center;
+  }
+}
+
+.text {
+  .command-list & {
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    font-size: 16px;
+    line-height: 1.18;
+    text-align: center;
+  }
+}

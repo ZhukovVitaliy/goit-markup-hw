@@ -1,0 +1,137 @@
+.footer-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background-color: var(--footer-background-color);
+}
+
+.flex-footer {
+  @media screen and(min-width: $tablet) and(max-width: $tabletOnly) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px 0;
+  }
+
+  @media screen and(min-width: $desktop) {
+    display: flex;
+  }
+}
+
+.address-block {
+  @media screen and(min-width: $tablet) and(max-width: $tabletOnly) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and(max-width: $mobileOnly) {
+    margin-bottom: 60px;
+  }
+}
+
+.address {
+  margin-bottom: 10px;
+
+  color: var(--primery-white-color);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+
+  @media screen and( max-width: $tabletOnly) {
+    text-align: center;
+  }
+}
+
+/* join-block */
+
+.join-block {
+  @media screen and(min-width: $tablet) and(max-width: $tabletOnly) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and(max-width: $mobileOnly) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and(min-width: $desktop) {
+    margin-left: 70px;
+  }
+}
+
+.footer-title-text {
+  display: inline-block;
+  margin: 0 0 20px 0;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 1.14;
+  text-transform: uppercase;
+  color: var(--primery-white-color);
+
+  @media screen and(max-width: $tabletOnly) {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* form-block */
+
+.form-block {
+  @media screen and(min-width: $tablet) and(max-width: $tabletOnly) {
+    flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and(min-width: $desktop) {
+    margin-left: auto;
+  }
+}
+
+.form-box {
+  @media screen and(min-width: $desktop) {
+    display: flex;
+    gap: 12px;
+  }
+}
+
+.footer-input {
+  width: 100%;
+  margin: 0;
+  padding: 16px 15px;
+
+  background-color: var(--footer-background-color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  @media screen and(max-width: $tabletOnly) {
+    margin-bottom: 20px;
+  }
+  @media screen and(min-width: $tablet) and(max-width: $tabletOnly) {
+    display: block;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and(min-width: $desktop) {
+    width: 358px;
+  }
+}
+
+.box-footet-btn {
+  @media screen and(max-width: $tabletOnly) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.footet-btn {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-send {
+  fill: currentColor;
+}

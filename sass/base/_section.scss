@@ -1,0 +1,35 @@
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &.secondary-bg-color {
+    background-color: var(--secondary-background-color);
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.section-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  color: var(--title-text-color);
+
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.17;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+
+    font-size: 36px;
+    line-height: 1.16;
+  }
+}
+
+.section-title.centered {
+  text-align: center;
+}

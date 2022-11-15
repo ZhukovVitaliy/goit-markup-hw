@@ -1,0 +1,76 @@
+button {
+  font-family: inherit;
+}
+
+/* btn-list */
+
+.btn-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 8px;
+
+  @media screen and(max-width: $mobileOnly) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and(min-width: $tablet) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  @media screen and(min-width: $desktop) {
+    margin-bottom: 50px;
+  }
+}
+
+/* button */
+
+.button {
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--title-text-color);
+  background-color: var(--secondary-background-color);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.primery {
+  &.button {
+    padding: 10px 32px;
+
+    fill: var(--primery-white-color);
+    color: var(--primery-white-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  &.button:hover,
+  &.button:focus {
+    color: var(--title-text-color);
+    background-color: var(--secondary-background-color);
+    fill: var(--title-text-color);
+  }
+}
+
+.secondary {
+  &.button {
+    padding: 6px 22px;
+
+    color: var(--title-text-color);
+    background-color: var(--secondary-background-color);
+  }
+
+  &.button:hover,
+  &.button:focus {
+    color: var(--primery-white-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}

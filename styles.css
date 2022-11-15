@@ -131,6 +131,7 @@ img {
   font-size: 26px;
   line-height: 1.2;
 }
+
 .accent-logo {
   color: var(--accent-color);
 }
@@ -209,6 +210,7 @@ img {
 .site-nav .link.current:after {
   transform: scaleX(1);
 }
+
 /* contacts */
 
 .contacts {
@@ -216,10 +218,6 @@ img {
   margin-left: auto;
   gap: 50px;
 }
-
-/* .contacts .item + .item {
-  margin-left: 50px;
-} */
 
 /* contact links */
 
@@ -504,6 +502,14 @@ img {
 
   transition: transform 250ms linear;
 }
+
+/* .checkbox-icon-check {
+  opacity: 1;
+}
+
+.checkbox:checked + .checkbox-icon > .checkbox-icon-check {
+  opacity: 1;
+} */
 
 .checkbox:checked + .checkbox-icon {
   transform: scale(1.1);

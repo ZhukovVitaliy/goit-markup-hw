@@ -1,0 +1,27 @@
+:root {
+  --primery-text-color: #757575;
+  --title-text-color: #212121;
+  --primery-white-color: #ffffff;
+  --secondary-background-color: #f5f4fa;
+  --accent-color: #2196f3;
+  --logo-color: #000000;
+  --address-color: rgba(255, 255, 255, 0.6);
+  --footer-background-color: #2f303a;
+  --footer-contact-link-color: rgba(255, 255, 255, 0.6);
+  --footer-social-link-color: rgba(255, 255, 255, 0.1);
+  --header-border: #ececec;
+  --portfolio-card-border: #eeeeee;
+  --icon-cilor: #afb1b8;
+}
+
+$colors: (
+  'primary': #757575,
+  'accent': #2196f3,
+  'secondary': #5a1321,
+  'foreground': #191919,
+  'background': #e9e9e9,
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}
